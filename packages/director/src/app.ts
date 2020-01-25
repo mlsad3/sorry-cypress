@@ -11,6 +11,10 @@ app.get('/', (_, res) =>
   res.redirect('https://github.com/agoldis/sorry-cypress')
 );
 
+app.get('/status', (_, res) =>
+  res.send('Looks Good')
+);
+
 app.post('/runs', async (req, res) => {
   const { ciBuildId } = req.body;
   console.log(`>> Machine is joining a run`, { ciBuildId });
